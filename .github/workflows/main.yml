@@ -1,36 +1,17 @@
-<<<<<<< HEAD
 # .github/workflows/main.yml
 name: Main Taski workflow
 
-=======
-# Файл main.yml
-# Имя workflow
-name: Main Taski Workflow
-# Перечень событий-триггеров, при которых должен запускаться workflow
->>>>>>> 33c57c43f9a241636a6f1eaeb34ce0353c69adf1
 on:
-  # Событие push возникает,
-  # когда изменения исходного кода приходят на сервер GitHub
   push:
-    # Отслеживаем изменения только в ветке main
     branches:
       - main
-<<<<<<< HEAD
 
 jobs:
   tests:
     # Разворачиваем окружение:
-=======
-# Перечень задач
-jobs:
-  # Единственная задача — склонировать код 
-  # и вывести в консоль дерево файлов
-  checkout-and-print-tree:
->>>>>>> 33c57c43f9a241636a6f1eaeb34ce0353c69adf1
     runs-on: ubuntu-latest
 
     steps:
-<<<<<<< HEAD
     # Копируем код проекта
     - name: Check out code
       uses: actions/checkout@v4
@@ -45,19 +26,8 @@ jobs:
       run: |
         python -m pip install --upgrade pip 
         pip install ruff==0.8.0
-        pip install -r requirements.txt
     # Запускаем ruff
     - name: Lint with ruff
       # Вызываем ruff и указываем ему,
       # что нужно проверить файлы только в папке backend/
       run: python -m ruff check backend/
-=======
-      # На GitHub Actions есть готовые описания шагов, 
-      # их можно использовать в своих workflow.
-      # Применим готовое описание шага для получения исходного кода
-      - name: Check out repository code  # Имя шага задаём сами
-        uses: actions/checkout@v4  # Берём готовое решение из библиотеки GitHub Actions
-      # Выполняем команду tree в текущей директории
-      - name: Print project tree
-        run: tree .
->>>>>>> 33c57c43f9a241636a6f1eaeb34ce0353c69adf1
